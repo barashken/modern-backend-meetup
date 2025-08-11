@@ -1,4 +1,3 @@
-version: "3"
 services:
   db:
     image: postgres
@@ -7,5 +6,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./data:/var/lib/postgresql/data
-    privileged: true
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
